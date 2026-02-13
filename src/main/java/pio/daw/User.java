@@ -31,24 +31,22 @@ public class User implements Localizable {
         }
     }
 
-    /**
-     * Devuelve cuántas entradas válidas ha hecho el usuario.
-     */
+    
+     //Devuelve cuántas entradas válidas ha hecho el usuario.
+     
     public Integer getNEntries(){
         return this.nEntries;
     }
 
-    /**
-     * Devuelve si el usuario está dentro de la biblioteca.
-     */
+    //Devuelve si el usuario está dentro de la biblioteca.
+     
     @Override
     public Boolean isInside() {
         return this.inside;
     }
 
-    /**
-     * Para mostrar el usuario por su ID.
-     */
+    //Para mostrar el usuario por su ID.
+     
     @Override
     public String toString() {
         return this.id;
