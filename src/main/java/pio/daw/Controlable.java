@@ -4,38 +4,42 @@ import java.util.List;
 
 public interface Controlable {
 
-
     /**
-     * Register a entry/exit change of a user.
-     * @param id ID of the user to update.
-     * @param s event type detected.
-     */
+     Este método sirve para registrar,cada vez que el sistema detecta una ENTRADA o una SALIDA,
+     llamaremos a este método para actualizar la información del usuario.
+     
+      @param id ID del usuario que ha generado el evento.
+      @param e Tipo de evento (ENTRADA o SALIDA).
+     
     public void registerChange(String id, EventType e);
 
-    /**
-     * Return the list of all of the current Users
-     * @return current users.
-     */
+    //Devuelve la lista de usuarios de aquellos que han entrado y todavía no han salido.
+     
+     * @return lista de usuarios que siguen dentro. */
+     
     public List<User> getCurrentInside();
 
-    /**
-     * Get the user with the biggest amount of entries.
-     * @return user that enters more tiemes.
+     /**
+     * Devuelve una lista con el/los usuario(s) que más veces han entrado.
+     * Puede haber empate, así que el método devuelve una lista en lugar de uno solo.
+     * 
+     * @return lista de usuarios con mayor número de entradas válidas.
      */
-    public  List<User> getMaxEntryUsers();
-
+    public List<User> getMaxEntryUsers();
 
     /**
-     * Get the list with all the users that has enter the place ordered by User ID.
-     * @return
+     * Devuelve la lista de todos los usuarios que han aparecido en el registro,
+     * ordenados por su ID. Esto sirve para mostrar un resumen ordenado y fácil de leer.
+     * 
+     * @return lista de usuarios ordenados por ID.
      */
     public List<User> getUserList();
-
     /**
      * Print a resume of the current status:
      * 1. Current users
      * 2. Entries per user
      * 3. User with more entries
      */
+
     public void printResume();
-;}
+}
